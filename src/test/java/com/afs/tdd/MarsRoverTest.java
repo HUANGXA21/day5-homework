@@ -75,5 +75,16 @@ public class MarsRoverTest {
         assertEquals("E", marsRover.getDirection());
     }
 
+    @Test
+    public void should_return_direction_plus_when_input_command_L_Direction_W() {
+        String command = "L";
+
+        MarsRover marsRover = new MarsRover(0, 0, "W");
+        marsRover.executeCommand(command);
+
+        assertEquals("S", marsRover.getDirection());
+    }
+
+
 
 }

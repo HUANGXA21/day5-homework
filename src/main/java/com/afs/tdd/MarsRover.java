@@ -27,28 +27,34 @@ public class MarsRover {
     public void executeCommand(String command) {
         switch (command) {
             case "M":
-                if (direction.equals("N")) {
-                    y++;
+                switch (direction) {
+                    case "N":
+                        y++;
+                        break;
+                    case "E":
+                        x++;
+                        break;
+                    case "S":
+                        y--;
+                        break;
+                    case "W":
+                        x--;
+                        break;
                 }
-                if (direction.equals("E")) {
-                    x++;
-                }
-                if (direction.equals("S")) {
-                    y--;
-                }
-                if (direction.equals("W")) {
-                    x--;
-                }
-                break;
             case "L":
-                if (direction.equals("N")) {
-                    direction = "W";
-                }
-                if (direction.equals("E")) {
-                    direction = "N";
-                }
-                if (direction.equals("S")) {
-                    direction = "E";
+                switch (direction) {
+                    case "N":
+                        direction = "W";
+                        break;
+                    case "E":
+                        direction = "N";
+                        break;
+                    case "S":
+                        direction = "E";
+                        break;
+                    case "W":
+                        direction = "S";
+                        break;
                 }
         }
 
