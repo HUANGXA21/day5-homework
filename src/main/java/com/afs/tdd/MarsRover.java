@@ -41,6 +41,7 @@ public class MarsRover {
                         x--;
                         break;
                 }
+                break;
             case "L":
                 switch (direction) {
                     case "N":
@@ -55,6 +56,14 @@ public class MarsRover {
                     case "W":
                         direction = "S";
                         break;
+                }
+                break;
+            case "R":
+                switch (direction) {
+                    case "N":
+                        direction = "E";
+                        break;
+
                 }
         }
 
