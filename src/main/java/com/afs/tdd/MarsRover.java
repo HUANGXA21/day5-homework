@@ -4,14 +4,17 @@ public class MarsRover {
     private int x;
     private int y;
     private String direction;
+
     public MarsRover(int x, int y, String direction) {
         this.x = x;
         this.y = y;
         this.direction = direction;
     }
+
     public int getX() {
         return x;
     }
+
     public int getY() {
         return y;
     }
@@ -22,24 +25,28 @@ public class MarsRover {
 
 
     public void executeCommand(String command) {
-        if (command.equals("M")) {
-            if(direction.equals("N")) {
-                y++;
-            }
-            if(direction.equals("E")) {
-                x++;
-            }
-            if(direction.equals("S")) {
-                y--;
-            }
-            if(direction.equals("W")) {
-                x--;
-            }
-        }
-         if(command.equals("L")) {
-            if(direction.equals("N")) {
-                direction = "W";
-            }
+        switch (command) {
+            case "M":
+                if (direction.equals("N")) {
+                    y++;
+                }
+                if (direction.equals("E")) {
+                    x++;
+                }
+                if (direction.equals("S")) {
+                    y--;
+                }
+                if (direction.equals("W")) {
+                    x--;
+                }
+                break;
+            case "L":
+                if (direction.equals("N")) {
+                    direction = "W";
+                }
+                if (direction.equals("E")) {
+                    direction = "N";
+                }
         }
 
 
