@@ -1,6 +1,13 @@
 package com.afs.tdd;
 
 public class MarsRover {
+    public static final String MOVE = "M";
+    public static final String LEFT = "L";
+    public static final String RIGHT = "R";
+    public static final String NORTH = "N";
+    public static final String EAST = "E";
+    public static final String SOUTHERN = "S";
+    public static final String WEST = "W";
     private int x;
     private int y;
     private String direction;
@@ -26,13 +33,13 @@ public class MarsRover {
 
     public void executeCommand(String command) {
         switch (command) {
-            case "M":
+            case MOVE:
                 Move();
                 break;
-            case "L":
+            case LEFT:
                 turnLeft();
                 break;
-            case "R":
+            case RIGHT:
                 turnRight();
                 break;
         }
@@ -40,16 +47,16 @@ public class MarsRover {
 
     private void Move() {
         switch (direction) {
-            case "N":
+            case NORTH:
                 y++;
                 break;
-            case "E":
+            case EAST:
                 x++;
                 break;
-            case "S":
+            case SOUTHERN:
                 y--;
                 break;
-            case "W":
+            case WEST:
                 x--;
                 break;
         }
@@ -57,34 +64,34 @@ public class MarsRover {
 
     private void turnLeft() {
         switch (direction) {
-            case "N":
-                direction = "W";
+            case NORTH:
+                direction = WEST;
                 break;
-            case "E":
-                direction = "N";
+            case EAST:
+                direction = NORTH;
                 break;
-            case "S":
-                direction = "E";
+            case SOUTHERN:
+                direction = EAST;
                 break;
-            case "W":
-                direction = "S";
+            case WEST:
+                direction = SOUTHERN;
                 break;
         }
     }
 
     private void turnRight() {
         switch (direction) {
-            case "N":
-                direction = "E";
+            case NORTH:
+                direction = EAST;
                 break;
-            case "E":
-                direction = "S";
+            case EAST:
+                direction = SOUTHERN;
                 break;
-            case "S":
-                direction = "W";
+            case SOUTHERN:
+                direction = WEST;
                 break;
-            case "W":
-                direction = "N";
+            case WEST:
+                direction = NORTH;
                 break;
         }
     }
