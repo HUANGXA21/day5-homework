@@ -1,5 +1,7 @@
 package com.afs.tdd;
 
+import java.util.stream.IntStream;
+
 public class MarsRover {
 
     public static final String MOVE_FORWARD = "M";
@@ -41,6 +43,7 @@ public class MarsRover {
                 break;
             case MOVE_BACKWARD:
                 moveBackward();
+                break;
             case LEFT:
                 turnLeft();
                 break;
@@ -49,6 +52,23 @@ public class MarsRover {
                 break;
         }
     }
+
+    public void executeCommands(String commands) {
+        String[] commandList = convertCommands(commands);
+        for (String command : commandList) {
+            executeCommand(command);
+        }
+    }
+
+    private String[] convertCommands(String commands) {
+        if (commands == null) {
+            return new String[0];
+        }
+        return IntStream.range(0, commands.length())
+                .mapToObj(i -> String.valueOf(commands.charAt(i)))
+                .toArray(String[]::new);
+    }
+
 
     private void moveBackward() {
         switch (direction) {

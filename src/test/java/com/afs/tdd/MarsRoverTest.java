@@ -165,4 +165,16 @@ public class MarsRoverTest {
         assertEquals("N", marsRover.getDirection());
     }
 
+    @Test
+    public void should_return_location_plus_when_input_commands_Direction_N() {
+        String commands = "MRMLB";
+
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+        marsRover.executeCommands(commands);
+
+        assertEquals("N", marsRover.getDirection());
+        assertEquals(1, marsRover.getX());
+        assertEquals(0, marsRover.getY());
+    }
+
 }
