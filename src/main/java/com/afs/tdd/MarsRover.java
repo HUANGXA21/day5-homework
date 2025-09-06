@@ -10,6 +10,7 @@ public class MarsRover {
     public static final String EAST = "E";
     public static final String SOUTHERN = "S";
     public static final String WEST = "W";
+    public static final String MOVE_BACKWARD = "B";
     private int x;
     private int y;
     private String direction;
@@ -38,11 +39,21 @@ public class MarsRover {
             case MOVE_FORWARD:
                 moveForward();
                 break;
+            case MOVE_BACKWARD:
+                moveBackward();
             case LEFT:
                 turnLeft();
                 break;
             case RIGHT:
                 turnRight();
+                break;
+        }
+    }
+
+    private void moveBackward() {
+        switch (direction) {
+            case NORTH:
+                y--;
                 break;
         }
     }
