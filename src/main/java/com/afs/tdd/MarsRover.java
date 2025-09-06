@@ -2,7 +2,7 @@ package com.afs.tdd;
 
 public class MarsRover {
 
-    public static final String MOVE = "M";
+    public static final String MOVE_FORWARD = "M";
     public static final String LEFT = "L";
     public static final String RIGHT = "R";
 
@@ -35,8 +35,8 @@ public class MarsRover {
 
     public void executeCommand(String command) {
         switch (command) {
-            case MOVE:
-                Move();
+            case MOVE_FORWARD:
+                moveForward();
                 break;
             case LEFT:
                 turnLeft();
@@ -47,7 +47,7 @@ public class MarsRover {
         }
     }
 
-    private void Move() {
+    private void moveForward() {
         switch (direction) {
             case NORTH:
                 y++;
