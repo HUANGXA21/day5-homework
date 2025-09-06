@@ -1,5 +1,6 @@
 package com.afs.tdd;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class MarsRover {
@@ -55,9 +56,7 @@ public class MarsRover {
 
     public void executeCommands(String commands) {
         String[] commandList = convertCommands(commands);
-        for (String command : commandList) {
-            executeCommand(command);
-        }
+        Arrays.stream(commandList).forEach(this::executeCommand);
     }
 
     private String[] convertCommands(String commands) {
